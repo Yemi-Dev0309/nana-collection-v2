@@ -25,6 +25,13 @@ async function verifyPayment(currentUser) {
         urlParameters.get("reference") ||
         urlParameters.get("trxref");
 
+        const formattedReference = reference
+    ? reference
+        .toUpperCase()
+        .match(/.{1,4}/g)
+        ?.join("-")
+    : "";
+
     let pendingOrder = null;
 
     try {
@@ -55,7 +62,7 @@ async function verifyPayment(currentUser) {
         paymentDetails.innerHTML = `
             <p class="payment-error">
                 Please contact Nana Collection with this reference:
-                <strong>${reference}</strong>
+                <strong>${formattedReference}</strong>
             </p>
         `;
 
@@ -90,6 +97,12 @@ async function verifyPayment(currentUser) {
         const safeReference =
             String(result.payment.reference)
                 .replace(/[.#$[\]/]/g, "_");
+
+                const formattedVerifiedReference =
+    String(result.payment.reference || reference)
+        .toUpperCase()
+        .match(/.{1,4}/g)
+        ?.join("-") || "";
 
         const orderReference = ref(
             database,
@@ -129,7 +142,7 @@ async function verifyPayment(currentUser) {
             paymentMethod: "Paystack",
 
             paymentReference:
-                result.payment.reference,
+                formattedVerifiedReference,
 
             paidAt:
                 result.payment.paidAt ||
@@ -157,7 +170,7 @@ async function verifyPayment(currentUser) {
 
                 <p>
                     <span>Reference</span>
-                    <strong>${result.payment.reference}</strong>
+                    <strong>${formattedVerifiedReference}</strong>
                 </p>
 
                 <p>
@@ -205,7 +218,7 @@ async function verifyPayment(currentUser) {
 
             <p class="payment-reference">
                 Payment reference:
-                <strong>${reference}</strong>
+                <strong>${formattedReference}</strong>
             </p>
         `;
     }
