@@ -716,7 +716,7 @@ if (paystackButton) {
 
             try {
                 const response = await fetch(
-                    "/.netlify/functions/initialize-payment",
+                    "/api/initialize-payment",
                     {
                         method: "POST",
                         headers: {

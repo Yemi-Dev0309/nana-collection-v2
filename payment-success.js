@@ -64,7 +64,7 @@ async function verifyPayment(currentUser) {
 
     try {
         const response = await fetch(
-            "/.netlify/functions/verify-payments",
+            "/api/verify-payments",
             {
                 method: "POST",
                 headers: {
