@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="luxury-cart-page">
+
+    <header class="cart-header">
+        <a href="index.html" class="cart-logo">
+            <span>NANA</span>
+            <small>COLLECTION</small>
+        </a>
+
+        <a href="index.html#shop" class="cart-continue-link">
+            Continue Shopping
+        </a>
+    </header>
+
+    <main class="cart-main">
+
+        <div class="cart-heading">
+            <p>YOUR SELECTION</p>
+            <h1>Shopping Bag</h1>
+        </div>
+
+        <div class="cart-layout">
+
+            <section class="cart-products-section">
+
+                <div class="cart-section-title">
+                    <h2>Your Items</h2>
+                    <span id="item-count">0 items</span>
+                </div>
+
+                <div id="cart-items"></div>
+
+                <a href="index.html#shop" class="continue-shopping-button">
+                    ← Continue Shopping
+                </a>
+
+            </section>
+
+            <aside class="order-summary">
+
+                <div class="summary-heading">
+                    <p>ORDER DETAILS</p>
+                    <h2>Order Summary</h2>
+                </div>
+
+                <div class="summary-total-row">
+                    <span>Total</span>
+
+                    <h2 id="total-price">
+                        ₦0
+                    </h2>
+                </div>
+
+                <div class="customer-form">
+
+                    <div class="cart-form-group">
+                        <label for="customer-name">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="customer-name"
+                            placeholder="Enter your full name"
+                        >
+                    </div>
+
+                    <div class="cart-form-group">
+                        <label for="customer-phone">Phone Number</label>
+
+                        <input
+                            type="tel"
+                            id="customer-phone"
+                            placeholder="Enter your phone number"
+                        >
+                    </div>
+
+                    <div class="cart-form-group">
+                        <label for="customer-address">Delivery Address</label>
+
+                        <textarea
+                            id="customer-address"
+                            placeholder="Enter your delivery address"
+                        ></textarea>
+                    </div>
+
+                    <button id="checkout-btn" type="button">
+                        Checkout on WhatsApp
+                    </button>
+
+                    <button type="button" id="paystack-btn">
+                        Pay Online with Paystack
+                    </button>
+
+                    <p class="cart-secure-note">
+                        Secure checkout · Your information is protected
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+</div>
+
+</div>
+<script type="module" src="script.js"></script>
+</body>
+</html>

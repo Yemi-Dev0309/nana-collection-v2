@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Product Details | Nana Collection</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="product-details-header">
+        <a href="index.html">
+            ← Back to Store
+        </a>
+
+        <h1>Nana Collection</h1>
+
+        <a href="cart.html">
+            Cart (<span id="cart-count">0</span>)
+        </a>
+    </header>
+
+
+    <main class="product-details-page">
+
+        <section class="product-details-container" id="product-details-container">
+    <p>Loading product details...</p>
+</section>
+
+      <section class="recently-viewed-section">
+    <h2>Recently Viewed</h2>
+
+    <div
+        id="recently-viewed-products"
+        class="product-container">
+    </div>
+</section>
+
+<section class="product-reviews-section">
+    <h2>Customer Reviews</h2>
+
+    <div class="review-form">
+        <label for="review-rating">
+            Rating
+        </label>
+
+        <select id="review-rating">
+            <option value="">
+                Select rating
+            </option>
+            <option value="5">
+                5 Stars
+            </option>
+            <option value="4">
+                4 Stars
+            </option>
+            <option value="3">
+                3 Stars
+            </option>
+            <option value="2">
+                2 Stars
+            </option>
+            <option value="1">
+                1 Star
+            </option>
+        </select>
+
+        <label for="review-text">
+            Your Review
+        </label>
+
+        <textarea
+            id="review-text"
+            placeholder="Write your review here..."
+        ></textarea>
+
+        <button
+            type="button"
+            id="submit-review-btn"
+        >
+            Submit Review
+        </button>
+    </div>
+
+    <div id="reviews-list">
+        <p>No reviews yet.</p>
+    </div>
+</section>
+
+    </main>
+
+
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>

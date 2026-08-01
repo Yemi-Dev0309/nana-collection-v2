@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NANA COLLECTION</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body> 
+
+    <div id="page-loader" class="page-loader">
+    <div class="loader-content">
+        <div class="loader-logo">
+            <span>NANA</span>
+            <small>COLLECTION</small>
+        </div>
+
+        <div class="loader-line"></div>
+
+        <p>Curating Luxury...</p>
+    </div>
+</div>
+
+    <header class="luxury-header">
+    <button class="menu-button" id="menuButton" aria-label="Open menu">
+        ☰
+    </button>
+
+    <a href="index.html" class="brand-logo">
+        <span>NANA</span>
+        <small>COLLECTION</small>
+    </a>
+
+    <div class="header-actions">
+        <a href="#shop" class="search-button" aria-label="Search">
+            ⌕
+        </a>
+
+        <a href="cart.html" class="cart-button" aria-label="Shopping cart">
+            🛍
+            <span id="cart-count">0</span>
+        </a>
+    </div>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-top">
+        <div class="menu-brand">
+            <span>NANA</span>
+            <small>COLLECTION</small>
+        </div>
+
+        <button id="closeMenuButton" class="close-menu" aria-label="Close menu">
+            ×
+        </button>
+    </div>
+
+     <div class="mobile-account-links">
+        <span id="user-info"></span>
+
+        <a href="account.html">My Account</a>
+
+        <a href="#" id="logoutBtn" style="display: none;">
+            Logout
+        </a>
+    </div>
+
+    <nav class="mobile-navigation">
+    <a href="#home">Home</a>
+    <a href="#shop">Shop All</a>
+    <a href="#shop">Luxury Abayas</a>
+    <a href="#shop">Men's Jalab</a>
+    <a href="#shop">Luxury Veils</a>
+    <a href="#shop">Accessories</a>
+    <a href="wishlist.html">Wishlist</a>
+</nav>
+
+</aside>
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="hero-label">NANA COLLECTION</p>
+
+        <h1>Luxury Modest Fashion</h1>
+
+        <p class="hero-description">
+            Elegant Islamic wear and accessories for women, men and children.
+        </p>
+
+        <a href="#shop" class="hero-button">
+            Explore Collection
+        </a>
+    </div>
+
+    <div class="hero-image">
+        <img
+            src="images/nana-banner.jpg"
+            alt="Nana Collection modest fashion"
+        >
+    </div>
+</section>
+
+<section class="collections">
+
+    <div class="section-title">
+        <p>DISCOVER</p>
+        <h2>Featured Collections</h2>
+    </div>
+
+    <div class="collection-grid">
+
+        <div class="collection-card">
+            <img src="images/luxury-abaya-brown.jpg" alt="Abayas">
+            <div class="collection-overlay">
+                <h3>Luxury Abayas</h3>
+                <a href="#shop">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="collection-card">
+            <img src="images/jalab-1.jpg" alt="Jalab">
+            <div class="collection-overlay">
+                <h3>Men's Collection</h3>
+                <a href="#shop">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="collection-card">
+            <img src="images/veil.jpg" alt="Veils">
+            <div class="collection-overlay">
+                <h3>Luxury Veils</h3>
+                <a href="#shop">Shop Now</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="why-us">
+
+    <div class="why-card">
+        <h3>Premium Quality</h3>
+        <p>Every item is carefully selected to ensure elegance, comfort and lasting quality.</p>
+    </div>
+
+    <div class="why-card">
+        <h3>Nationwide Delivery</h3>
+        <p>Fast and secure delivery across Nigeria with trusted logistics partners.</p>
+    </div>
+
+    <div class="why-card">
+        <h3>Affordable Luxury</h3>
+        <p>Luxury fashion designed for everyone without compromising quality.</p>
+    </div>
+
+</section>
+
+<section class="products" id="shop">
+
+    <div class="section-title">
+
+    <span>OUR COLLECTION</span>
+
+    <h2>Featured Products</h2>
+
+    <p>
+        Carefully selected luxury abayas, jalabs, veils and accessories.
+    </p>
+
+</div>
+
+    <div class="filter-buttons">
+    <button class="filter-btn" data-category="all">All</button>
+    <button class="filter-btn" data-category="abaya">Abaya</button>
+    <button class="filter-btn" data-category="jalab">Jalab</button>
+    <button class="filter-btn" data-category="cap">Caps</button>
+    <button class="filter-btn" data-category="veil">Veils</button>
+    <button class="filter-btn" data-category="scarf">Scarves</button>
+    <button class="filter-btn" data-category="accessories">Accessories</button>
+</div>
+
+
+<div class="product-search-box">
+    <input
+        type="text"
+        id="product-search"
+        placeholder="Search products..."
+    >
+</div>
+
+<div class="product-sort-box">
+    <label for="product-sort">Sort by:</label>
+
+    <select id="product-sort">
+        <option value="default">Default</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="name-az">Name: A to Z</option>
+        <option value="name-za">Name: Z to A</option>
+    </select>
+</div>
+
+    <div class="products-container" id="products-container"></div>
+
+</div>
+
+</section>
+<section class="about" id="about">
+    <div class="about-text">
+        <h2>About Nana Collection</h2>
+
+        <p>
+            Nana Collection is a premium Islamic fashion brand dedicated to
+            providing elegant Abayas, Jalabs, Veils and accessories for
+            men, women and children across Nigeria.
+        </p>
+
+        <p>
+            We believe every customer deserves quality, modesty and
+            affordable luxury.
+        </p>
+
+        <button>Learn More</button>
+    </div>
+</section>
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+
+    <p>📍 Ibadan, Oyo State, Nigeria</p>
+    <p>📞 +234 800 123 4567</p>
+    <p>📧 nanacollection@email.com</p>
+
+    <button>Chat on WhatsApp</button>
+</section>
+<footer>
+    <p>© 2026 Nana Collection. All Rights Reserved.</p>
+</footer>
+
+<div id="toast-container" class="toast-container"></div>
+
+<script type="module" src="script.js"></script>
+<script type="module" src="auth.js"></script>
+
+</body>
+</html>

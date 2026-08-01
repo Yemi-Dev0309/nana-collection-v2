@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana Collection Admin</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="admin-header">
+    <h1>Nana Collection Admin</h1>
+    <p>Manage your products easily</p>
+</header>
+
+<nav class="admin-dashboard-nav">
+    <a href="#dashboard-overview">Dashboard</a>
+    <a href="#product-management">Products</a>
+    <a href="#customer-orders">Orders</a>
+
+    <button type="button" onclick="adminLogout()">
+        Logout
+    </button>
+</nav>
+
+
+<div class="dashboard-cards">
+
+    <div class="dashboard-card">
+        <h2 id="total-products">0</h2>
+        <p>Total Products</p>
+    </div>
+
+    <div class="dashboard-card">
+        <h2 id="total-categories">0</h2>
+        <p>Categories</p>
+    </div>
+
+    <div class="dashboard-card">
+        <h2 id="total-value">₦0</h2>
+        <p>Total Value</p>
+    </div>
+
+</div>
+
+<div class="admin-form">
+
+    <input
+        type="text"
+        id="product-name"
+        placeholder="Product Name">
+
+    <input
+        type="number"
+        id="product-price"
+        placeholder="Product Price">
+
+    <input
+        type="text"
+        id="product-category"
+        placeholder="Category">
+
+        <input
+    type="number"
+    id="product-stock"
+    placeholder="Stock Quantity"
+    min="0">
+
+  <label for="product-image">
+    Choose Product Images
+</label>
+
+<input
+    type="file"
+    id="product-image"
+    accept="image/*"
+    multiple
+>
+
+<small>
+    You can select up to four images.
+</small>
+
+
+<label for="product-sizes">
+    Available Sizes
+</label>
+
+<input
+    type="text"
+    id="product-sizes"
+    placeholder="Example: S, M, L, XL"
+>
+
+<label for="product-colors">
+    Available Colours
+</label>
+
+<input
+    type="text"
+    id="product-colors"
+    placeholder="Example: Black, Blue, White"
+>
+
+    <textarea
+        id="product-description"
+        placeholder="Product Description"></textarea>
+
+    <button id="add-product-btn">
+        Add Product
+    </button>
+
+</div>
+
+<section class="admin-products-section" id="product-management">
+
+    <div class="admin-search-box">
+    <input
+        type="text"
+        id="admin-product-search"
+        placeholder="Search saved products..."
+>
+</div>
+
+    <h2>Saved Products</h2>
+
+    <div id="admin-products-list">
+        <!-- Saved products will appear here -->
+    </div>
+
+    <section class="admin-orders-section" id="customer-orders">
+
+    <div id="admin-orders-list">
+        <p>Loading customer orders...</p>
+    </div>
+
+</section>
+
+</section>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

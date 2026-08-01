@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Account - Nana Collection</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f8f1ec, #fffaf7);
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-page {
+        width: 100%;
+        padding: 30px 15px;
+        box-sizing: border-box;
+    }
+
+    .profile-card {
+        width: 100%;
+        max-width: 650px;
+        margin: auto;
+        background: white;
+        padding: 35px;
+        border-radius: 20px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .profile-avatar {
+        width: 95px;
+        height: 95px;
+        margin: 0 auto 18px;
+        border-radius: 50%;
+        background: #8B4513;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        font-weight: bold;
+        border: 5px solid #f3dfd2;
+    }
+
+    .profile-card h2 {
+        margin: 0;
+        color: #5f2f11;
+        font-size: 26px;
+    }
+
+    .profile-subtitle {
+        color: #777;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .profile-info {
+        display: grid;
+        gap: 15px;
+        margin-bottom: 28px;
+        text-align: left;
+    }
+
+    .info-box {
+        padding: 16px;
+        border-radius: 10px;
+        background: #faf5f1;
+        border: 1px solid #ead8cc;
+    }
+
+    .info-label {
+        display: block;
+        margin-bottom: 6px;
+        color: #8B4513;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .info-box strong {
+        color: #333;
+        word-break: break-word;
+    }
+
+    .profile-actions {
+        display: grid;
+        gap: 12px;
+    }
+
+    .profile-actions a,
+    .profile-actions button {
+        width: 100%;
+        padding: 14px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        border: none;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .profile-actions a {
+        background: #8B4513;
+        color: white;
+    }
+
+    .profile-actions a:hover {
+        background: #6d3410;
+    }
+
+    .profile-actions button {
+        background: #333;
+        color: white;
+    }
+
+    .profile-actions button:hover {
+        background: #111;
+    }
+
+    @media (max-width: 600px) {
+        .profile-card {
+            padding: 25px 18px;
+        }
+
+        .profile-card h2 {
+            font-size: 22px;
+        }
+
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            font-size: 34px;
+        }
+    }
+
+/* =========================
+   ACCOUNT DASHBOARD
+========================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f8f6f4;
+    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+}
+
+.account-dashboard {
+    min-height: 100vh;
+}
+
+.account-header {
+    height: 90px;
+    padding: 0 6%;
+    background: #fff;
+    border-bottom: 1px solid #e8e3df;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.account-logo {
+    color: #171717;
+    text-decoration: none;
+    text-align: center;
+}
+
+.account-logo span {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    letter-spacing: 8px;
+}
+
+.account-logo small {
+    display: block;
+    margin-top: 5px;
+    font-size: 9px;
+    letter-spacing: 5px;
+}
+
+.account-cart-link {
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.account-main {
+    width: min(1180px, 90%);
+    margin: auto;
+    padding: 70px 0;
+}
+
+.account-title-row {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #d8d3cf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.account-title-row p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 5px;
+}
+
+.account-menu-button {
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.account-welcome {
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.account-welcome .profile-avatar {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #5b0f28;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+    font-size: 32px;
+}
+
+.account-welcome h1 {
+    margin: 0 0 15px;
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 6vw, 70px);
+    font-weight: 400;
+}
+
+.account-welcome p {
+    max-width: 720px;
+    margin: 0;
+    color: #666;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.account-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.account-stat-card {
+    min-height: 190px;
+    padding: 35px;
+    background: #fff;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+}
+
+.account-stat-icon {
+    color: #b89443;
+    font-size: 30px;
+}
+
+.account-stat-card p {
+    margin: 25px 0 15px;
+    color: #666;
+    font-size: 13px;
+    letter-spacing: 4px;
+}
+
+.account-stat-card strong {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.account-profile-section,
+.account-orders-section {
+    margin-top: 70px;
+}
+
+.account-section-heading p {
+    margin: 0 0 10px;
+    color: #777;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.account-section-heading h2 {
+    margin: 0 0 30px;
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.account-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.account-info-box {
+    padding: 26px;
+    background: #fff;
+    border: 1px solid #ebe6e2;
+}
+
+.account-info-box span {
+    display: block;
+    margin-bottom: 12px;
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.account-info-box strong {
+    font-size: 16px;
+    word-break: break-word;
+}
+
+#orders-container {
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #ebe6e2;
+}
+
+.account-quick-links {
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.account-quick-links a {
+    padding: 14px 22px;
+    background: #171717;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* Sliding account menu */
+
+.account-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.account-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.account-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: min(420px, 86vw);
+    height: 100vh;
+    padding-top: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.account-sidebar-top {
+    flex-shrink: 0;
+}
+
+.account-sidebar-nav {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.account-sidebar-bottom {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+.account-sidebar.open {
+    transform: translateX(0);
+}
+
+.account-sidebar-top {
+    padding: 28px 30px;
+    border-bottom: 1px solid #e6e1dd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.account-sidebar-top h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+.account-sidebar-close {
+    border: none;
+    background: transparent;
+    font-size: 34px;
+    cursor: pointer;
+}
+
+.account-sidebar-nav {
+    padding: 30px;
+    display: grid;
+    gap: 10px;
+}
+
+.account-sidebar-nav a,
+.account-sidebar-bottom a,
+.account-sidebar-bottom button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 18px;
+    border: none;
+    background: transparent;
+    color: #444;
+    text-align: left;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.account-sidebar-nav a.active {
+    background: #f5f2f0;
+    color: #111;
+}
+
+.account-sidebar-bottom {
+    margin-top: auto;
+    padding: 25px 30px;
+    border-top: 1px solid #e6e1dd;
+}
+
+@media (max-width: 760px) {
+    .account-header {
+        height: 78px;
+        padding: 0 22px;
+    }
+
+    .account-logo span {
+        font-size: 21px;
+        letter-spacing: 6px;
+    }
+
+    .account-main {
+        width: auto;
+        padding: 45px 22px 70px;
+    }
+
+    .account-welcome {
+        padding: 45px 0;
+        align-items: flex-start;
+    }
+
+    .account-welcome .profile-avatar {
+        display: none;
+    }
+
+    .account-welcome h1 {
+        font-size: 48px;
+    }
+
+    .account-welcome p {
+        font-size: 17px;
+    }
+
+    .account-stats,
+    .account-profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .account-stat-card {
+        min-height: 160px;
+    }
+
+    .account-quick-links {
+        flex-direction: column;
+    }
+
+    .account-quick-links a {
+        text-align: center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+   <div class="account-dashboard">
+
+    <header class="account-header">
+        <a href="index.html" class="account-logo">
+            <span>NANA</span>
+            <small>COLLECTION</small>
+        </a>
+
+        <a href="cart.html" class="account-cart-link">
+            Cart
+        </a>
+    </header>
+
+    <div class="account-overlay" id="accountOverlay"></div>
+
+    <aside class="account-sidebar" id="accountSidebar">
+        <div class="account-sidebar-top">
+            <h2>My Account</h2>
+
+            <button
+                type="button"
+                class="account-sidebar-close"
+                id="accountSidebarClose"
+                aria-label="Close account menu"
+            >
+                ×
+            </button>
+        </div>
+
+        <nav class="account-sidebar-nav">
+            <a href="#overview" class="active">Overview</a>
+            <a href="#my-orders">Orders</a>
+            <a href="#profile-details">Profile</a>
+            <a href="wishlist.html">Wishlist</a>
+            <a href="cart.html">My Cart</a>
+        </nav>
+
+        <div class="account-sidebar-bottom">
+            <a href="index.html#contact">Support</a>
+
+            <button type="button" id="accountLogoutBtn">
+                Logout
+            </button>
+        </div>
+    </aside>
+
+    <main class="account-main" id="overview">
+
+        <div class="account-title-row">
+            <p>MY ACCOUNT</p>
+
+            <button
+                type="button"
+                class="account-menu-button"
+                id="accountMenuButton"
+                aria-label="Open account menu"
+            >
+                ☰
+            </button>
+        </div>
+
+        <section class="account-welcome">
+            <div class="profile-avatar">
+                <span id="profile-initial">N</span>
+            </div>
+
+            <div>
+                <h1>
+                    Welcome back,
+                    <span id="welcome-name">Customer</span>.
+                </h1>
+
+                <p>
+                    New pieces are always arriving. Browse the latest
+                    additions and keep track of your orders here.
+                </p>
+            </div>
+        </section>
+
+        <section class="account-stats">
+            <article class="account-stat-card">
+                <span class="account-stat-icon">□</span>
+                <p>ACTIVE ORDERS</p>
+                <strong id="active-orders-count">00</strong>
+            </article>
+
+            <article class="account-stat-card">
+                <span class="account-stat-icon">▢</span>
+                <p>TOTAL ORDERS</p>
+                <strong id="total-orders-count">00</strong>
+            </article>
+
+            <article class="account-stat-card">
+                <span class="account-stat-icon">◇</span>
+                <p>MEMBER TIER</p>
+                <strong>Member</strong>
+            </article>
+        </section>
+
+        <section class="account-profile-section" id="profile-details">
+            <div class="account-section-heading">
+                <p>PROFILE</p>
+                <h2>Your information</h2>
+            </div>
+
+            <div class="account-profile-grid">
+                <div class="account-info-box">
+                    <span>FULL NAME</span>
+                    <strong id="account-name">Loading...</strong>
+                </div>
+
+                <div class="account-info-box">
+                    <span>EMAIL ADDRESS</span>
+                    <strong id="account-email">Loading...</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="account-orders-section" id="my-orders">
+            <div class="account-section-heading">
+                <p>ORDERS</p>
+                <h2>My Orders</h2>
+            </div>
+
+            <div id="orders-container">
+                <p>Loading your orders...</p>
+            </div>
+        </section>
+
+        <div class="account-quick-links">
+            <a href="index.html#shop">Continue Shopping</a>
+            <a href="wishlist.html">My Wishlist</a>
+            <a href="cart.html">My Cart</a>
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+    const accountMenuButton =
+        document.getElementById("accountMenuButton");
+
+    const accountSidebar =
+        document.getElementById("accountSidebar");
+
+    const accountSidebarClose =
+        document.getElementById("accountSidebarClose");
+
+    const accountOverlay =
+        document.getElementById("accountOverlay");
+
+    function openAccountMenu() {
+        accountSidebar.classList.add("open");
+        accountOverlay.classList.add("open");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeAccountMenu() {
+        accountSidebar.classList.remove("open");
+        accountOverlay.classList.remove("open");
+        document.body.style.overflow = "";
+    }
+
+    if (accountMenuButton) {
+        accountMenuButton.addEventListener(
+            "click",
+            openAccountMenu
+        );
+    }
+
+    if (accountSidebarClose) {
+        accountSidebarClose.addEventListener(
+            "click",
+            closeAccountMenu
+        );
+    }
+
+    if (accountOverlay) {
+        accountOverlay.addEventListener(
+            "click",
+            closeAccountMenu
+        );
+    }
+
+    document
+        .querySelectorAll(".account-sidebar-nav a")
+        .forEach((link) => {
+            link.addEventListener("click", closeAccountMenu);
+        });
+</script>
+
+    <script type="module" src="account.js"></script>
+
+</body>
+</html>
