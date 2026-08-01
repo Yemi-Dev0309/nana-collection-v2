@@ -733,19 +733,20 @@ if (paystackButton) {
                 const data =
                     await response.json();
 
-                if (
-                    !response.ok ||
-                    !data.success ||
-                    !data.authorization_url
-                ) {
-                    throw new Error(
-                        data.message ||
-                        "Unable to initialize payment."
-                    );
-                }
+               
+                    if (
+    !response.ok ||
+    !data.status ||
+    !data.data?.authorization_url
+) {
+    throw new Error(
+        data.message ||
+        "Unable to initialize payment."
+    );
+}
 
-                window.location.href =
-                    data.authorization_url;
+window.location.href =
+    data.data.authorization_url;
 
             } catch (error) {
                 console.error(
